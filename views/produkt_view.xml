@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="produkt_form_view" model="ir.ui.view">
+            <field name="name">aacommprog.produkt.form</field>
+            <field name="model">aacommprog.produkt</field>
+            <field name="arch" type="xml">
+                <form string="Produktet">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" placeholder="Produkti"/>
+                                <field name="kosto"/>
+                            </group>
+                            <group>
+                                <field name="cmim_shitje"/>
+                                <field name="cmim_blerje"/>
+                                <field name="sasi"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="produkt_tree_view" model="ir.ui.view">
+            <field name="name">aacommprog.produkt.tree</field>
+            <field name="model">aacommprog.produkt</field>
+            <field name="arch" type="xml">
+                <tree string="Produktet">
+                    <field name="name"/>
+                    <field name="kosto"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="produkt_search_view" model="ir.ui.view">
+            <field name="name">aacommprog.produkt.search</field>
+            <field name="model">aacommprog.produkt</field>
+            <field name="arch" type="xml">
+                <search string="Produktet">
+                    <field name="name"/>
+                    <field name="kosto"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="produkt_act_window" model="ir.actions.act_window">
+            <field name="name">Produktet</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">aacommprog.produkt</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Produktet.
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+        <menuitem id="produkt_menu_root" name="Produkt">
+            <menuitem name="Produktet" id="produkt_menu" action="produkt_act_window"/>
+        </menuitem>
+
+
+</odoo>
