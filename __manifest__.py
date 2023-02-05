@@ -10,6 +10,8 @@
     'depends': ['base'],
     'data': [
         'views/produkt_view.xml',
+        'views/klient_view.xml',
+        'views/fatura_view.xml',
     ],
     'demo': [],
     'installable': True,

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="klient_form_view" model="ir.ui.view">
+            <field name="name">aacommprog.klient.form</field>
+            <field name="model">aacommprog.klient</field>
+            <field name="arch" type="xml">
+                <form string="Klient">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Emri"/>
+                                <field name="lastname" placeholder="Mbiemri"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="age"/>
+                            </group>
+                            <group>
+                                <field name="cell"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="klient_tree_view" model="ir.ui.view">
+            <field name="name">aacommprog.klient.tree</field>
+            <field name="model">aacommprog.klient</field>
+            <field name="arch" type="xml">
+                <tree string="Klient">
+                    <field name="name"/>
+                    <field name="lastname"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="klient_search_view" model="ir.ui.view">
+            <field name="name">aacommprog.klient.search</field>
+            <field name="model">aacommprog.klient</field>
+            <field name="arch" type="xml">
+                <search string="Klient">
+                    <field name="name"/>
+                    <field name="lastname"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="klient_act_window" model="ir.actions.act_window">
+            <field name="name">Klient</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">aacommprog.klient</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Klient.
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+        <menuitem id="klient_root_menu" name="Klient" sequence="20"/>
+        <menuitem name="Klientet" id="klient_menu" parent="klient_root_menu" action="klient_act_window"/>
+
+    </data>
+</odoo>

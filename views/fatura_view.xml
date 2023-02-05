@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="fatura_form_view" model="ir.ui.view">
+            <field name="name">aacommprog.fatura.form</field>
+            <field name="model">aacommprog.fatura</field>
+            <field name="arch" type="xml">
+                <form string="Fatura">
+                    <div class="oe_title">
+                        <label for="nr_fature"/>
+                        <h1>
+                            <field name="nr_fature" placeholder="Numri i fatures"/>
+                        </h1>
+                    </div>
+                    <group>
+                            <field name="data"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="fatura_tree_view" model="ir.ui.view">
+            <field name="name">aacommprog.fatura.tree</field>
+            <field name="model">aacommprog.fatura</field>
+            <field name="arch" type="xml">
+                <tree string="Fatura">
+                    <field name="nr_fature"/>
+                    <field name="data"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="fatura_search_view" model="ir.ui.view">
+            <field name="name">aacommprog.fatura.search</field>
+            <field name="model">aacommprog.fatura</field>
+            <field name="arch" type="xml">
+                <search string="Fatura">
+                    <field name="nr_fature"/>
+                    <field name="data"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="fatura_act_window" model="ir.actions.act_window">
+            <field name="name">Fatura</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">aacommprog.fatura</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Fatura.
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+        <menuitem name="Fatura" id="fatura_menu" parent="klient_root_menu" action="fatura_act_window"/>
+
+    </data>
+</odoo>

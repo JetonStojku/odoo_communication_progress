@@ -58,7 +58,7 @@
         </record>
 
         <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
-        <menuitem id="produkt_menu_root" name="Produkt">
+        <menuitem id="produkt_menu_root" name="Produkt" sequence="10">
             <menuitem name="Produktet" id="produkt_menu" action="produkt_act_window"/>
         </menuitem>
 
