@@ -11,6 +11,7 @@
                             <group>
                                 <field name="name" placeholder="Produkti"/>
                                 <field name="kosto"/>
+                                <field name="kategori_ids" widget="many2many_tags"/>
                             </group>
                             <group>
                                 <field name="cmim_shitje"/>

@@ -12,6 +12,7 @@
         'views/produkt_view.xml',
         'views/klient_view.xml',
         'views/fatura_view.xml',
+        'views/kategori_view.xml',
     ],
     'demo': [],
     'installable': True,
