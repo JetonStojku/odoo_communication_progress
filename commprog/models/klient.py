@@ -1,8 +1,8 @@
 from odoo import fields, models, api
 
 
-class AacommprogKlient(models.Model):
-    _name = 'aacommprog.klient'
+class CommprogKlient(models.Model):
+    _name = 'commprog.klient'
     _description = 'Description'
 
     name = fields.Char(string="Emer", required=True)

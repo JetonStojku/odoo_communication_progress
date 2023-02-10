@@ -1,8 +1,8 @@
 from odoo import fields, models, api
 
 
-class AacommprogFatura(models.Model):
-    _name = 'aacommprog.fatura'
+class CommprogFatura(models.Model):
+    _name = 'commprog.fatura'
     _description = 'Description'
 
     nr_fature = fields.Integer(string="Numri i fatures", required=True)
@@ -13,16 +13,16 @@ class AacommprogFatura(models.Model):
                                         ('cancel', 'Anulluar'),
                                         ])
     type = fields.Boolean(string='Tipi', required=True, default=False)
-    klient_id = fields.Many2one(comodel_name='aacommprog.klient', string='Klient', required=True)
+    klient_id = fields.Many2one(comodel_name='commprog.klient', string='Klient', required=True)
     # total = fields.Float(string='Total')
 
 
-class AacommprogRreshtFature(models.Model):
-    _name = 'aacommprog.rresht.fature'
-    _description = 'AacommprogRreshtFature'
+class CommprogRreshtFature(models.Model):
+    _name = 'commprog.rresht.fature'
+    _description = 'CommprogRreshtFature'
 
-    produkt_id = fields.Many2one(comodel_name='aacommprog.produkt', string='Produkt', required=True)
-    fatura_id = fields.Many2one(comodel_name='aacommprog.fatura', string='Fatura',
+    produkt_id = fields.Many2one(comodel_name='commprog.produkt', string='Produkt', required=True)
+    fatura_id = fields.Many2one(comodel_name='commprog.fatura', string='Fatura',
                                 required=True, ondelete='cascade')
     cmimi = fields.Float(string='Cmimi', required=True)
     sasi = fields.Float(string='Sasi', required=True)

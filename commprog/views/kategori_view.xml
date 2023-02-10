@@ -3,8 +3,8 @@
     <data>
 
         <record id="kategori_form_view" model="ir.ui.view">
-            <field name="name">aacommprog.kategori.form</field>
-            <field name="model">aacommprog.kategori</field>
+            <field name="name">commprog.kategori.form</field>
+            <field name="model">commprog.kategori</field>
             <field name="arch" type="xml">
                 <form string="Kategori">
                     <sheet>
@@ -20,8 +20,8 @@
         </record>
 
         <record id="kategori_tree_view" model="ir.ui.view">
-            <field name="name">aacommprog.kategori.tree</field>
-            <field name="model">aacommprog.kategori</field>
+            <field name="name">commprog.kategori.tree</field>
+            <field name="model">commprog.kategori</field>
             <field name="arch" type="xml">
                 <tree string="Kategori">
                     <field name="emri"/>
@@ -30,8 +30,8 @@
         </record>
 
         <record id="kategori_search_view" model="ir.ui.view">
-            <field name="name">aacommprog.kategori.search</field>
-            <field name="model">aacommprog.kategori</field>
+            <field name="name">commprog.kategori.search</field>
+            <field name="model">commprog.kategori</field>
             <field name="arch" type="xml">
                 <search string="Kategori">
                     <field name="emri"/>
@@ -42,7 +42,7 @@
         <record id="kategori_act_window" model="ir.actions.act_window">
             <field name="name">Kategori</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">aacommprog.kategori</field>
+            <field name="res_model">commprog.kategori</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
