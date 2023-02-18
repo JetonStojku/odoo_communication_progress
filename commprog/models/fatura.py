@@ -15,6 +15,11 @@ class CommprogFatura(models.Model):
     type = fields.Boolean(string='Tipi', required=True, default=False)
     klient_id = fields.Many2one(comodel_name='commprog.klient', string='Klient', required=True)
     # total = fields.Float(string='Total')
+    rresht_fature_ids = fields.One2many(comodel_name='commprog.rresht.fature',
+                                        inverse_name='fatura_id', string='Rresht fature')
+
+    def test_button(self):
+        pass
 
 
 class CommprogRreshtFature(models.Model):

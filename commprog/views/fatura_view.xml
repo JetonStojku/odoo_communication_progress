@@ -8,6 +8,10 @@
             <field name="arch" type="xml">
                 <form string="Fatura">
                     <header>
+                        <button class="btn-primary" name="test_button" type="object" string="Test button"/>
+                        <button class="btn-danger" name="test_button" type="object" string="Test button"/>
+                        <button class="btn-warning" name="test_button" type="object" string="Test button"/>
+                        <button class="btn-success" name="test_button" type="object" string="Test button"/>
                         <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                     </header>
                     <sheet>
@@ -26,6 +30,28 @@
                                 <field name="klient_id"/>
                             </group>
                         </group>
+                        <notebook>
+                            <page name="rreshta_fature_page" string="Produktet">
+                                <field name="rresht_fature_ids">
+                                    <tree>
+                                        <field name="produkt_id"/>
+                                        <field name="cmimi"/>
+                                        <field name="sasi"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="produkt_id"/>
+                                            </group>
+                                            <group>
+                                                <field name="cmimi"/>
+                                                <field name="sasi"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
