@@ -8,11 +8,10 @@
             <field name="arch" type="xml">
                 <form string="Fatura">
                     <header>
-                        <button class="btn-primary" name="test_button" type="object" string="Test button"/>
-                        <button class="btn-danger" name="test_button" type="object" string="Test button"/>
-                        <button class="btn-warning" name="test_button" type="object" string="Test button"/>
-                        <button class="btn-success" name="test_button" type="object" string="Test button"/>
-                        <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                        <button class="btn-primary" name="aprovo" type="object" string="Konfirmo faturen" states="draft"/>
+                        <button class="btn-primary" name="anullo" type="object" string="Anullo faturen" states="done"/>
+                        <button class="btn-primary" name="draft" type="object" string="Kthe faturen ne draft" states="cancel"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
                     </header>
                     <sheet>
                         <div class="oe_title">
@@ -24,6 +23,7 @@
                         <group>
                             <group>
                                 <field name="data"/>
+                                <field name="total"/>
                             </group>
                             <group>
                                 <field name="type"/>
@@ -33,10 +33,11 @@
                         <notebook>
                             <page name="rreshta_fature_page" string="Produktet">
                                 <field name="rresht_fature_ids">
-                                    <tree>
+                                    <tree editable="bottom">
                                         <field name="produkt_id"/>
                                         <field name="cmimi"/>
                                         <field name="sasi"/>
+                                        <field name="total"/>
                                     </tree>
                                     <form>
                                         <group>

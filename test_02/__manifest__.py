@@ -8,7 +8,7 @@
     'website': 'Website',
     'license': '',
     'depends': ['base'],
-    'data': [],
+    'data': ['views/books_view.xml'],
     'demo': [],
     'installable': True,
     'auto_install': False
