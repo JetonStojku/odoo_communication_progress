@@ -1,4 +1,5 @@
 from odoo import fields, models, api
+from odoo.exceptions import UserError
 
 
 class CommprogFatura(models.Model):
@@ -25,12 +26,24 @@ class CommprogFatura(models.Model):
 
     def aprovo(self):
         self.state = "done"
+        koef = 1 if self.type else -1
+        for rec in self.rresht_fature_ids:
+            rec.produkt_id.sasi += koef * rec.sasi
 
     def anullo(self):
         self.state = "cancel"
+        koef = -1 if self.type else 1
+        for rec in self.rresht_fature_ids:
+            rec.produkt_id.sasi += koef * rec.sasi
 
     def draft(self):
         self.state = "draft"
+
+    def unlink(self):
+        for rec in self:
+            if rec.state != 'draft':
+                raise UserError("Mund të fshihen vetëm faturat në draft!")
+        return super(CommprogFatura, self).unlink()
 
 
 class CommprogRreshtFature(models.Model):
